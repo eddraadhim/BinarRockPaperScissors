@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:text="Kertas\nGunting\nBatu"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pemain1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Pemain 1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tv_computer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+    <TextView
+        android:id="@+id/tv_computer"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Computer"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_pemain1"
+        app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_batu_p1"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/divider_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_pemain1">
+
+        <ImageView
+            android:id="@+id/iv_batu_p1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/batu" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/cv_batu_com"
+        app:layout_constraintStart_toEndOf="@id/cv_batu_p1"
+        app:layout_constraintTop_toBottomOf="@id/tv_pemain1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_batu_com"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider_top"
+        app:layout_constraintTop_toBottomOf="@id/tv_computer">
+
+        <ImageView
+            android:id="@+id/iv_batu_com"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/batu" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_kertas_p1"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_versus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_batu_p1">
+
+        <ImageView
+            android:id="@+id/iv_kertas_p1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/kertas" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_versus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Versus"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_kertas_com"
+        app:layout_constraintEnd_toStartOf="@id/cv_kertas_com"
+        app:layout_constraintStart_toEndOf="@id/cv_kertas_p1"
+        app:layout_constraintTop_toBottomOf="@id/cv_batu_p1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_kertas_com"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_versus"
+        app:layout_constraintTop_toBottomOf="@id/cv_batu_com">
+
+        <ImageView
+            android:id="@+id/iv_kertas_com"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/kertas" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_gunting_p1"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/divider_bot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_kertas_p1">
+
+        <ImageView
+            android:id="@+id/iv_gunting_p1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gunting" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/divider_bot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/cv_gunting_com"
+        app:layout_constraintStart_toEndOf="@id/cv_gunting_p1"
+        app:layout_constraintTop_toBottomOf="@id/cv_kertas_p1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_gunting_com"
+        android:layout_width="@dimen/cardview_width"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_marginVertical="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider_bot"
+        app:layout_constraintTop_toBottomOf="@id/cv_kertas_com">
+
+        <ImageView
+            android:id="@+id/iv_gunting_com"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gunting" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_refresh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/green_flat"
+        app:layout_constraintStart_toStartOf="@id/cv_gunting_com"
+        app:layout_constraintTop_toBottomOf="@id/cv_gunting_com">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:src="@drawable/refresh" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
